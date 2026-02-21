@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    font-family: var(--font-dm-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: #FF5C00; color: #fff; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #161616; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply border border-brand-border hover:border-brand-orange text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+  .card {
+    @apply bg-brand-card border border-brand-border rounded-xl;
+  }
+  .input {
+    @apply w-full bg-brand-card border border-brand-border rounded-lg px-4 py-3 text-white placeholder-brand-muted focus:outline-none focus:border-brand-orange transition-colors;
+  }
+  .admin-sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-brand-muted hover:text-white hover:bg-brand-card transition-all;
+  }
+  .admin-sidebar-link.active {
+    @apply text-white bg-brand-card border border-brand-border;
+  }
+  .admin-stat-card {
+    @apply card p-6 flex flex-col gap-2;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
